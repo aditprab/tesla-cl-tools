@@ -34,4 +34,3 @@ def getClientId():
 
 def getClientSecret():
 	return config.get('auth', 'client-secret')
-
