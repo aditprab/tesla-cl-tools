@@ -17,6 +17,9 @@ def getChargeStateUrl():
     chargeStateUrl = config.get('urls', 'baseUrl') + config.get('urls', 'chargeStatusEndpoint')
     return chargeStateUrl % getVehicleId()
 
+def getVehiclesUrl():
+	return config.get('urls', 'baseUrl') + config.get('urls', 'vehiclesEndpoint')
+
 def getUsername():
 	return config.get('auth', 'username')
 
@@ -32,5 +35,3 @@ def getClientId():
 def getClientSecret():
 	return config.get('auth', 'client-secret')
 
-def getVehicleId():
-	return config.get('auth', 'vehicle-id')
