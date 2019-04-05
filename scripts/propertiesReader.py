@@ -29,5 +29,3 @@ def getClientSecret():
 
 def getVehicleId():
 	return config.get('auth', 'vehicle-id')
-
-print getChargeStateUrl()
