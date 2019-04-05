@@ -5,4 +5,20 @@ Command line tool to check info about your car!
 If you've ever wanted to check info about your Tesla, or perform small actions like turning on
 climate control **without** using your phone- this is the tool for you.
 
-For info on set up, check the Wiki tab.
+To get started:
+
+Clone the repo.
+
+cd into the scripts directory, run the installTool shell script:
+
+    $ ./installTool
+
+You should be able to execute tesla commands from any directory on command line now!
+
+![img] https://imgur.com/a/mRW0IIc
+
+![img] https://imgur.com/a/pMW3Nij
+
+
+
+
