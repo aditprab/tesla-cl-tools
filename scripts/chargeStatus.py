@@ -26,7 +26,7 @@ headers = {
 res = requests.request("GET", chargeStateUrl, headers=headers)
 resJson = res.json()
 response = resJson['response']
-
+print(res.content)
 print("The Black Panther is: " + response['charging_state'] + ".")
 print("The current charge level is: " + str(response['battery_range']) + " miles.")
-print("Battery is " + str(response['battery_level']) + "%" " full");
+print("Battery is " + str(response['battery_level']) + "%" " full")
