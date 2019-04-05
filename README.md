@@ -15,10 +15,17 @@ cd into the scripts directory, run the installTool shell script:
 
 You should be able to execute tesla commands from any directory on command line now!
 
-![Imgur Image] https://i.imgur.com/HJFlcuR.png
+For a list of all options:
 
-![Imgur Image] https://i.imgur.com/jJXSq3f.png
+    $ tesla
+    
+For first time set up (setting up authentication):
 
+    $ tesla setup
 
+For checking basic info about the car:
+
+    $ tesla status
+    
 
 
