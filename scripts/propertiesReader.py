@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
 import ConfigParser
+import os
 
 config = ConfigParser.RawConfigParser()
-config.read('Configurations.properties')
+try:
+	config.read('/tmp/Configurations.properties')
+except Exception as e :
+	print(str(e))
+
 
 def getAuthTokenUrl():
 	return config.get('urls', 'baseUrl') + config.get('urls', 'tokenEndpoint')
