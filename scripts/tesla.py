@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import status
+import setup
 
 # Entry point for CL tool. Usage: python tesla.py <option>
 
@@ -28,8 +29,7 @@ def badInput(input):
 
 
 def setupOption():
-    #call setup.py here when it exists.
-    print("No set up implementation yet")
+    setup.setup()
 def statusOption():
     status.getStatus()
 
