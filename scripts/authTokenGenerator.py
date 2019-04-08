@@ -34,16 +34,16 @@ def fetchAuthToken(email, password):
 	refreshToken = resJson['refresh_token']
 
 	# persist auth info
-	with open('./assets/auth', 'w') as auth_file:
+	with open('/tmp/teslaAuthFile', 'w+') as auth_file:
 		auth_writer = csv.writer(auth_file, delimiter=',')
 		auth_writer.writerow([authToken, expiresIn, refreshToken])
 
 	return authToken
 
-# TODO needs work
+# TODO needs work - check if authToken is expired, etc.
 def getAuthToken():
-	with open('./assets/auth', 'r') as auth_file:
-		auth_reader = csv.reader(auth_file, delimeter=',')
+	with open('/tmp/teslaAuthFile', 'r') as auth_file:
+		auth_reader = csv.reader(auth_file, delimiter=',')
 		for row in auth_reader:
 			authToken = row[0]
 			expiresIn = row[1]

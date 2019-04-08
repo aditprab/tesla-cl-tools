@@ -4,17 +4,18 @@ import authTokenGenerator
 import propertiesReader
 import requests
 
-authToken = authTokenGenerator.getAuthToken()
-vehiclesUrl = propertiesReader.getVehiclesUrl()
-
-headers = {
-    'User-Agent':propertiesReader.getUserAgent(),
-    'Content-Type': "application/json",
-    'Authorization': "Bearer " + authToken
-}
 
 def getVehicles():
-	res = requests.request("GET", vehiclesUrl, headers=headers)
-	resJson = res.json()
-	response = resJson['response']
-	print(response)
+    authToken = authTokenGenerator.getAuthToken()
+
+    headers = {
+        'User-Agent':propertiesReader.getUserAgent(),
+        'Content-Type': "application/json",
+        'Authorization': "Bearer " + authToken
+    }
+
+    vehiclesUrl = propertiesReader.getVehiclesUrl()
+    response = requests.request("GET", vehiclesUrl, headers=headers)
+    json = response.json()
+    resJson =  json['response'][0]
+    return (resJson['display_name'],resJson['id'])
